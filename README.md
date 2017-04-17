@@ -23,7 +23,29 @@ Every time the component will be initiated as well as periodically afterwards, a
 All properties start with `org.openmucextensions.app.recorder.`, so the full property name is this prefix followed by the property name in the table above. OpenMUC automatically synchronizes the logging timestamps with full hours.
 
 ## Blacklist configuration
-Drivers, devices or channels that should be ignored can be defined in a blacklist file.
+Drivers, devices or channels that should be ignored can be defined in a blacklist file. The following example shows a valid blacklist file with blocked drivers, devices and channels:
+
+```
+<blacklist>
+  
+  <drivers>
+    <driver>driverId1</driver>
+  </drivers>
+  
+  <devices>
+    <device>deviceAddress1</device>
+    <device>deviceAddress2</device>
+  </devices>
+  
+  <channels>
+    <channel>channelAddress1</channel>
+    <channel>channelAddress2</channel>
+  </channels>
+  
+</blacklist>
+```
+
+The default filename for the blacklist file is `blacklist.xml` in the OpenMUC `conf/` directory.
 
 ## Data export using the Apache Felix Gogo console
 The component provides a console command for exporting logged data. The data export format is optimized for processing in analysis applications like Microsoft Excel. The following table shows an example of the export data format:
