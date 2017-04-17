@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.openmucextensions.app.recorder.console">
+   <implementation class="org.openmucextensions.app.recorder.ConsoleCommands"/>
+   <property name="osgi.command.scope" type="String" value="recorder"/>
+<property name="osgi.command.function">
+exporttable
+</property>
+   <service>
+      <provide interface="org.openmucextensions.app.recorder.ConsoleCommands"/>
+   </service>
+   <reference bind="setDataAccessService" cardinality="1..1" interface="org.openmuc.framework.dataaccess.DataAccessService" name="DataAccessService" policy="static" unbind="unsetDataAccessService"/>
+</scr:component>
