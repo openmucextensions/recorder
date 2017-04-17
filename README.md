@@ -20,7 +20,7 @@ Every time the component will be initiated as well as periodically afterwards, a
 | updatePeriod | The automated channel configuration update period in ms | 86.400.000 (24 hours) |
 | blacklistFilename | The blacklist filename | ./conf/blacklist.xml |
 
-All properties start with `org.openmucextensions.app.recorder.`, so the full property name is this prefix followed by the property name in the table above.
+All properties start with `org.openmucextensions.app.recorder.`, so the full property name is this prefix followed by the property name in the table above. OpenMUC automatically synchronizes the logging timestamps with full hours.
 
 ## Blacklist configuration
 Drivers, devices or channels that should be ignored can be defined in a blacklist file.
@@ -43,3 +43,11 @@ The console command for exporting data is `exporttable` with scope `recorder`. T
 ```
 exporttable filename startTime endTime interval
 ```
+
+Start and end time must match the pattern `yyyy-MM-dd HH:mm:ss`. Because of the space character between date and time, double quotes must be used. The interval will be specified in minutes. The follwing example shows a valid command:
+
+```
+exporttable ./export.csv "2000-01-01 00:00:00" "2000-01-31 23:59:59" 15
+```
+
+The command exports a table like shown in the example above with data between Jan, 1<sup>st</sup> 2000 and Jan, 31<sup>st</sup> 2000 with an interval of 15 minutes. The export file includes a header with the channel ids and the data as comma separated values (CSV).
