@@ -23,7 +23,7 @@ dependencies {
 
 jar {
   manifest {
-    name = "Building Flight Recorder"
+    name = "OpenMUC Extensions Building Flight Recorder"
     version = "1.0.0"
     symbolicName = "org.openmucextensions.app.recorder";
     instruction 'Bundle-ClassPath', '.'
