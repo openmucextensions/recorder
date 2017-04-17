@@ -6,7 +6,7 @@ This OpenMUC application automatically logs available channels and provides the 
 * Blacklists for devices or channels that shouldn't be logged
 * Data will be formated in tables for export
 * Optimized export format for Microsoft Excel
-* Time-based average for logged values
+* Time-based average for logged values (planned)
 
 The following sections describe the implemented features in detail.
 
